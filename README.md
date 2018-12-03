@@ -1,2 +1,2 @@
-# GJBlog
-Blog
+# GJBlog.github.io
+MyBlog
