@@ -1,0 +1,114 @@
+I"<h2 id="css-文字文本">CSS-文字、文本</h2>
+<h5 id="1style标签中type属性默认是typetextcss">1、style标签中type属性默认是type=”text/css”</h5>
+<h5 id="2样式">2、样式：</h5>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="nt">标签名称</span> <span class="p">{</span>
+    <span class="err">属性名称：属性对应的值</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h5 id="3文字属性">3、文字属性</h5>
+<ul>
+  <li>文字样式</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="nt">font-style</span><span class="o">:</span> <span class="nt">italic</span><span class="o">;</span>
+<span class="nt">normal</span><span class="err">：</span><span class="nt">正常</span><span class="o">(</span><span class="nt">默认</span><span class="o">)</span>
+<span class="nt">italic</span><span class="err">：</span><span class="nt">倾斜</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>文字粗细</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td> --><td class="rouge-code"><pre><span class="nt">font-weight</span><span class="err">：</span><span class="nt">bold</span><span class="o">;</span>
+<span class="nt">单词取值</span><span class="err">：</span>
+<span class="nt">bold</span><span class="err">：</span><span class="nt">加粗</span>
+<span class="nt">bolder</span><span class="err">：</span><span class="nt">更粗</span>
+<span class="nt">lighter</span><span class="err">：</span><span class="nt">细线</span><span class="o">(</span><span class="nt">默认</span><span class="o">)</span>
+<span class="nt">数字取值</span><span class="err">：100</span><span class="o">~</span><span class="err">900</span><span class="nt">之间整百</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>文字大小</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td> --><td class="rouge-code"><pre><span class="nt">font-size</span><span class="err">：30</span><span class="nt">px</span><span class="o">;</span>
+<span class="nt">单位</span><span class="err">：</span><span class="nt">像素</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>文字字体</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="nt">font-family</span><span class="err">：”</span><span class="nt">微软雅黑</span><span class="err">"</span><span class="o">,</span><span class="nt">备选字体</span><span class="o">,</span><span class="err">……</span>
+<span class="nt">中文名称必须要使用双引号或者单引号括起来</span>
+<span class="nt">中文字体能处理英文</span><span class="err">，</span><span class="nt">英文字体不能处理中文</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>文字简写</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="nt">font</span><span class="o">:</span> <span class="nt">italic</span> <span class="nt">bold</span> <span class="err">10</span><span class="nt">px</span> <span class="s1">"楷体"</span>
+<span class="nt">style</span><span class="err">、</span><span class="nt">weight</span> <span class="nt">可以省略</span><span class="err">、</span><span class="nt">交换位置</span>
+<span class="nt">size</span><span class="err">、</span><span class="nt">family</span> <span class="nt">不可以省略</span><span class="err">、</span><span class="nt">不可以交换位置</span><span class="err">，</span><span class="nt">且位置放最后</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h5 id="4文本装饰">4、文本装饰</h5>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td> --><td class="rouge-code"><pre><span class="nt">text-decoration</span><span class="o">:</span> <span class="nt">underline</span><span class="o">;</span>
+<span class="nt">underline</span><span class="err">：</span><span class="nt">下划线</span>
+<span class="nt">line-through</span><span class="err">：</span><span class="nt">删除线</span>
+<span class="nt">overline</span><span class="err">：</span><span class="nt">上划线</span>
+<span class="nt">none</span><span class="err">：</span><span class="nt">无效果</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>文本水平位置</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td> --><td class="rouge-code"><pre><span class="nt">text-align</span><span class="err">：</span><span class="nt">left</span><span class="o">;</span>
+<span class="nt">left</span><span class="err">、</span><span class="nt">right</span><span class="err">、</span><span class="nt">center</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>文本缩进</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td> --><td class="rouge-code"><pre><span class="nt">text-indent</span><span class="err">：2</span><span class="nt">em</span><span class="o">;</span>
+<span class="nt">em</span><span class="err">：</span><span class="nt">表示缩进的单位</span><span class="err">，</span><span class="nt">一个em表示一个文字宽度</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>颜色</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="nt">color</span><span class="err">：</span><span class="nt">值</span><span class="o">;</span>
+<span class="nt">值样式</span><span class="err">：</span><span class="nt">颜色单词</span><span class="err">、</span><span class="nt">rgb</span><span class="err">、</span><span class="nt">rgba</span><span class="err">、</span><span class="nf">#FF0000</span><span class="err">、</span><span class="nf">#F00</span>
+<span class="nt">常用灰色</span><span class="err">：</span><span class="nt">三原色的值都相同</span><span class="err">，</span><span class="nt">就是灰色</span><span class="err">，</span><span class="nt">值越小</span><span class="err">，</span><span class="nt">越黑色</span><span class="err">，</span><span class="nt">值越大</span><span class="err">，</span><span class="nt">越白色</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
