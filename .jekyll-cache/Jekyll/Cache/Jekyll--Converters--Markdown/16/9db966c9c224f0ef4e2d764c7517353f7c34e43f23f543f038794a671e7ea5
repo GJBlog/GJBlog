@@ -1,0 +1,78 @@
+I"<h4 id="三集合类型collection-types">三、集合类型(Collection Types)</h4>
+
+<p>1、数组(Arrays)</p>
+
+<ul>
+  <li>使用有序表存储同一类型的多个值。</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">someInts</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
+<span class="k">var</span> <span class="nv">someInts</span> <span class="o">=</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">shoppingList</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Eggs"</span><span class="p">,</span> <span class="s">"Milk"</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>2、集合(Set)</p>
+
+<ul>
+  <li>存储相同类型并且没有确定顺序的值。当集合元素顺序不重要时或者希望确保每个元素只出现一次时可以使用集合而不是数组。</li>
+  <li>一个类型要想存储在集合中，必须是可哈希化。需要提供一个方法来计算它的Hash值。相等的对象哈希值必须相同。</li>
+  <li>Swift中所有的基本类型(String、Int、Bool、Double)都是可哈希化的</li>
+  <li>使用自定义的类型作为集合的值得类型或者字典的键的类型，前提是自定义的类型必须符合Swift标准库中的Hash协议。符合Hash协议的类型必须提供一个Int类型的可读属性hashValue。又因为Hashable协议符合Equatable协议，所以遵循该协议的类型也必须提供一个==运算符的实现。这个Equatable协议要求任何符合==实现的实例之间都是相等的。(a==a, a==b &amp;&amp; b==a, a==b &amp;&amp; b==c &amp;&amp; a==c)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">letters</span> <span class="o">=</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">Character</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">favorit</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Rock"</span><span class="p">,</span><span class="s">"chsos"</span><span class="p">]</span>
+<span class="k">var</span> <span class="nv">favorit</span><span class="p">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="p">[</span><span class="s">"rock"</span><span class="p">,</span><span class="s">"class"</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>集合之间关系</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td> --><td class="rouge-code"><pre><span class="n">a</span><span class="o">.</span><span class="n">intersection</span><span class="err">：</span><span class="n">交集</span>
+<span class="n">a</span><span class="o">.</span><span class="n">symmetricDifference</span><span class="err">：</span><span class="n">在两个的任何一个集合中</span><span class="err">，</span><span class="n">但是不在两个集合中</span>
+<span class="n">a</span><span class="o">.</span><span class="n">union</span><span class="err">：</span><span class="n">并集</span>
+<span class="n">a</span><span class="o">.</span><span class="n">subtracting</span><span class="err">：</span><span class="n">在a集合</span><span class="err">，</span><span class="n">不在a和b的交集中</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>集合包含关系</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td> --><td class="rouge-code"><pre><span class="n">isSubset</span><span class="err">：</span><span class="n">一个集合中的值是否也被包含在另一个集合中</span>
+<span class="n">isSuperset</span><span class="err">：</span><span class="n">一个集合中包含另一个集合中所有的值</span>
+<span class="n">isStrictSubset</span><span class="err">：</span><span class="n">一个集合是否是另外一个集合的子集合或者父集合并且两个集合并不相等</span><span class="err">。</span>
+<span class="n">isDisjoint</span><span class="err">：</span><span class="nf">两个集合是否不含有相同的值</span><span class="p">(</span><span class="n">是否没有交集</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>3、字典(Dictionary)</p>
+
+<ul>
+  <li>一种存储多个相同类型的值的容器。</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td> --><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">namesOfIntergers</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span> <span class="kt">String</span><span class="p">]()</span>
+<span class="k">var</span> <span class="nv">namesOfIntergers</span> <span class="o">=</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">airports</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"YYZ"</span><span class="p">:</span> <span class="s">"Toronto Pearson"</span><span class="p">,</span> <span class="s">"DUB"</span><span class="p">:</span> <span class="s">"Dublin"</span><span class="p">]</span>
+<span class="k">var</span> <span class="nv">airports</span> <span class="o">=</span> <span class="p">[</span><span class="s">"YYZ"</span><span class="p">:</span> <span class="s">"Toronto Pearson"</span><span class="p">,</span> <span class="s">"DUB"</span><span class="p">:</span> <span class="s">"Dublin"</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

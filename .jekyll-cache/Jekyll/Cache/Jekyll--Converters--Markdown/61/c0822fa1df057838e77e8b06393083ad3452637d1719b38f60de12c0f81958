@@ -1,0 +1,274 @@
+I"�D<h4 id="一常量与变量">一、常量与变量</h4>
+<p>1、使用之前必须声明</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">constant</span> <span class="o">=</span> <span class="s">"常量"</span>
+<span class="k">var</span> <span class="nv">variable</span> <span class="o">=</span> <span class="s">"变量"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>2、一行声明多个变量和多个变量赋值</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td> --><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="kt">Double</span>
+<span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>3、变量、常量名的命名</p>
+
+<ul>
+  <li>不能以数字开头</li>
+  <li>如果非要使用Swfit关键字，则需要关键字前后添加反引号(`)</li>
+  <li>如果在使用printf打印输出时不想换行，可以设置terminator参数为””</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="p">(`</span><span class="nv">let</span><span class="p">`)</span> <span class="o">=</span> <span class="s">"let关键字"</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"输出"</span><span class="p">,</span> <span class="nv">terminator</span><span class="p">:</span><span class="s">""</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"是是是</span><span class="se">\(</span><span class="kt">XXX</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>4、swift注释</p>
+<ul>
+  <li>swift中的多行注释可以允许嵌套注释</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td> --><td class="rouge-code"><pre><span class="cm">/*XXXXXXXXX
+XXXXXXXXXXX
+/*XXXXXXXXX
+*/
+XXXXXXXXXXX
+*/</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="二整形浮点型">二、整形、浮点型</h4>
+<p>1、浮点型：Double、Float(优先使用Double)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td> --><td class="rouge-code"><pre><span class="kt">Double</span><span class="err">：</span><span class="n">精确度至少15位数字</span>
+<span class="kt">Float</span> <span class="err">：</span><span class="n">精确度最多只有6位数字</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>2、整形字面量</p>
+<ul>
+  <li>一个10进制，没有前缀</li>
+  <li>一个2进制，0b为前缀</li>
+  <li>一个8进制，0o为前缀</li>
+  <li>一个16进制，0X为前缀</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">decimalInter</span>        <span class="o">=</span> <span class="mi">17</span>
+<span class="k">let</span> <span class="nv">binaryInteger</span>       <span class="o">=</span> <span class="mb">0b10001</span>
+<span class="k">let</span> <span class="nv">octalInteger</span>        <span class="o">=</span> <span class="mi">0</span><span class="n">c21</span>
+<span class="k">let</span> <span class="nv">hexadecimalInteger</span>  <span class="o">=</span> <span class="mh">0x11</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>3、整型范围</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td> --><td class="rouge-code"><pre><span class="kt">Int8</span>    <span class="err">：</span><span class="o">-</span><span class="mi">128</span> <span class="o">~</span> <span class="mi">127</span>
+<span class="kt">UInt8</span>   <span class="p">:</span> <span class="mi">0</span> <span class="o">~</span> <span class="mi">255</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>4、类型别名(Type Aliases)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre><span class="kd">typealias</span> <span class="kt">AudioSample</span><span class="p">(</span><span class="n">类型别名</span><span class="p">)</span> <span class="o">=</span> <span class="kt">UInt16</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>5、元祖(Tuple)</p>
+
+<ul>
+  <li>元祖内部可以是任意类型的值</li>
+  <li>元祖内访问元素下标从0开始</li>
+  <li>定义元祖时，给元祖内部元素命名</li>
+  <li>元祖不适合创建复杂的数据结构，它在临时组织值时非常有用</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td> --><td class="rouge-code"><pre><span class="c1">//创建元祖</span>
+<span class="k">let</span> <span class="nv">http404Error</span> <span class="o">=</span> <span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s">"Not Found"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">http404Error</span> <span class="o">=</span> <span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="s">"OK"</span><span class="p">)</span>
+<span class="c1">//分解元祖</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">statusCode</span><span class="p">,</span> <span class="nv">statusMessage</span><span class="p">)</span> <span class="o">=</span> <span class="n">http404Error</span>
+<span class="c1">//忽略元祖一部分</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">statusCode</span><span class="p">,</span> <span class="nv">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">http404Error</span>
+<span class="c1">//通过下标来访问元祖元素</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"this is </span><span class="se">\(</span><span class="n">http404Error</span><span class="o">.</span><span class="mi">0</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="c1">//通过名字来访问元祖元素</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">http404Error</span><span class="o">.</span><span class="n">statusCode</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>6、可选类型(Optionals)</p>
+
+<ul>
+  <li>给可选变量赋值为nil,表示它没有值</li>
+  <li>可选常量或者变量如果没有赋值，它们会自动被置为nil</li>
+  <li>表示一个确定的值，用来表示值缺失，任何类型的可选状态都可以被置为nil</li>
+  <li>通过添加!来强制解包</li>
+  <li>在一个if语句中，可以包含多个可选绑定或者多个布尔条件，每一个之间使用,隔开，只要有任意一个可选绑定的值为nil或者任意一个布尔值为false,则整个if条件判断为false,也可以使用嵌套if语句来处理</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td> --><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="s">"guojie"</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"my name is </span><span class="se">\(</span><span class="n">name</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="c1">//可选绑定</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">constantName</span> <span class="o">=</span> <span class="n">someOptional</span> <span class="p">{</span>
+    <span class="n">statements</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">firstNumber</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="s">"400"</span><span class="p">),</span> <span class="k">let</span> <span class="nv">secondNumber</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="s">"43"</span><span class="p">),</span> <span class="n">firstNumber</span> <span class="o">&lt;</span> <span class="n">secondNumber</span> <span class="o">&amp;&amp;</span> <span class="n">secondNumber</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"陈工"</span><span class="p">)</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"失败"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">firstNumber</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="s">"4"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">secondNumber</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="s">"42"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">firstNumber</span> <span class="o">&lt;</span> <span class="n">secondNumber</span> <span class="o">&amp;&amp;</span> <span class="n">secondNumber</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"成功"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>7、错误处理(error handing)</p>
+<ul>
+  <li>通过使用错误处理来处理中程序可能出现的错误</li>
+  <li>一个函数通过在声明时添加throws关键字来抛出错误，同时在调用可能出现错误的函数时，将try关键字放置前</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> --><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">canThrowAnError</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+    
+<span class="p">}</span>
+<span class="k">do</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="nf">canThrowAnError</span><span class="p">()</span>
+    <span class="c1">//没有错误信息抛出</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+    <span class="n">有一个错误信息抛出</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>do语句将错误能被传播到更多个catch从句中</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td> --><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">makeASandwich</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="c1">//…………</span>
+<span class="p">}</span>
+<span class="k">do</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="nf">makeASandwich</span><span class="p">()</span>
+    <span class="nf">eatASandwich</span><span class="p">()</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="kt">SandwichError</span><span class="o">.</span><span class="n">outofCleanDishes</span> <span class="p">{</span>
+    <span class="nf">washDishes</span><span class="p">()</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="kt">SandwichError</span><span class="o">.</span><span class="nf">missingIngredients</span><span class="p">(</span><span class="k">let</span> <span class="nv">ingredients</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">buyGroceries</span><span class="p">(</span><span class="n">ingredients</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>8、断言和先决条件</p>
+
+<ul>
+  <li>断言只是在Debug环境中运行检查，先决条件则在Debug和Release环境中运行检查</li>
+  <li>如果编译在unchecked mode(-Ounchecked),先决条件不会被检查,断言和先决条件都是true</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">age</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="c1">//断言(因为-3不&gt;=0,所以断言失败)</span>
+<span class="nf">assert</span><span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"A person's age can't be less than zero"</span><span class="p">)</span>
+<span class="c1">//不带信息的断言</span>
+<span class="nf">assert</span><span class="p">(</span><span class="n">age</span><span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">//如果代码已经检查了条件，则使用</span>
+<span class="nf">assertionFailure</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span><span class="nv">file</span><span class="p">:</span><span class="nv">line</span><span class="p">:)</span>
+<span class="c1">//先决条件</span>
+<span class="nf">precondition</span><span class="p">(</span><span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"Index must be greater than zero"</span><span class="p">)</span>
+<span class="c1">//表示先决条件发生失败</span>
+<span class="nf">preconditionFailure</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span><span class="nv">file</span><span class="p">:</span><span class="nv">line</span><span class="p">:)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>9、致命失败(fatalError)</p>
+
+<ul>
+  <li>即使编译处于unchecked mode(-Ounchecked)时，fatalError仍然会被执行</li>
+  <li>在开发早期，只有方法声明，没有实现,可以使用fatalError(_:file:line:)</li>
+  <li>使用fatalError(“Unimplemented”)函数作为具体实现，不会被断言和先决条件那样被优化掉，可以确保代码执行到没有实现的方法时，程序会被中断</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td> --><td class="rouge-code"><pre><span class="c1">//致命失败(fatalError)</span>
+<span class="nf">fatalError</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span><span class="nv">file</span><span class="p">:</span><span class="nv">line</span><span class="p">:)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

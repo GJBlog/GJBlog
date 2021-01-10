@@ -1,0 +1,88 @@
+I"�<h4 id="app的重签名">App的重签名</h4>
+
+<p>在有些情况下，我们或许会需要对AppStore下载的App或者其他App有重签名的操作，比如说在分发某个App的ipa包，并没有修改App的源码，因为看不到App的源码，无法直接使用自己的账号来打包，这个使用就需要使用到App的重签名！那么通常的重签名方式都有哪些呢？</p>
+
+<h5 id="1ios-app-signer-工具">1、ios-app-signer 工具</h5>
+
+<p>工具界面如下所示，</p>
+
+<ul>
+  <li>input File：选择对应的.ipa包</li>
+  <li>Signing Certificate：选择对应的证书</li>
+  <li>Provisioning Profile：选择对应的描述文件</li>
+  <li>其他选项都是可选</li>
+</ul>
+
+<p><img src="https://ozpmrtiu1.bkt.clouddn.com/ios-app-signer.jpg" alt="" /></p>
+
+<h5 id="2sigh脚本">2、sigh脚本</h5>
+
+<ul>
+  <li>通过 Homebrew 安装 ruby</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew <span class="nb">install </span>ruby
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>安装sigh</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gem <span class="nb">install </span>sigh
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>使用步骤
+    <ul>
+      <li>在终端输入 <code class="language-plaintext highlighter-rouge">bash sign</code> 回车</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  <span class="o">[</span>WARNING] You are calling sigh directly. Usage of the tool name without the <span class="sb">`</span>fastlane<span class="sb">`</span> prefix is deprecated <span class="k">in </span>fastlane 2.0
+Please update your scripts to use <span class="sb">`</span>fastlane sigh resign<span class="sb">`</span> instead.
+<span class="o">[</span>21:27:40]: Path to ipa file:
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <ul>
+      <li>继续输入相关.ipa文件所在path路径，或者直接将文件拖入该行中，回车</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>  <span class="o">[</span>20:32:26]: Available identities:
+  iPhone Distribution: XXXXXXX
+      XXXXXXXXXXXX
+  <span class="o">[</span>20:32:26]: Signing Identity:
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <ul>
+      <li>填写相关的证书名称，回车</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  <span class="o">[</span>20:32:26]: Signing Identity: iPhone Developer: XXXXX
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <ul>
+      <li>填写相关的描述文件，回车</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  <span class="o">[</span>20:32:36]: Path to provisioning file: XXXXXXXX
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+    <ul>
+      <li>提示完成</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  <span class="o">[</span>20:33:12]: Successfully signed /Users/XXX/Desktop/aaa.ipa!
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+:ET

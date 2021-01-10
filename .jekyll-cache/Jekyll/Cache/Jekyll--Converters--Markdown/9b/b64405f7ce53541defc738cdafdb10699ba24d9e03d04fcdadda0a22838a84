@@ -1,0 +1,96 @@
+I"�<h4 id="二字符串和字符strings-and-characters">二、字符串和字符(Strings and Characters)</h4>
+
+<p>1、字符串字面量(String Literals)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">something</span> <span class="o">=</span> <span class="s">"some string"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>2、多行字符串字面量(Multiline String Literals)</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">quotation</span> <span class="o">=</span> <span class="s">"""
+the White Rabbit put on his spectacles
+till you come to ……
+"""</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>3、在多行字符串字面量中通过在行尾添加\来取消换行符,且不可以在最后一行添加\</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">some</span> <span class="o">=</span> <span class="s">"""
+the White Rabbit put on his spectacles.  "</span><span class="kt">Where</span> <span class="n">shall</span> <span class="kt">I</span> <span class="n">begin</span><span class="p">\</span>
+<span class="n">please</span> <span class="n">your</span> <span class="kt">Majesty</span>
+<span class="s">""" 
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>4、字符串字面量的特殊字符</p>
+
+<ul>
+  <li>转义字符：\0(空字符)、\(反斜线)、\t(水平制表符)、\n(换行符)、\r(回车符)、"(双引号)、'(单引号)、</li>
+  <li>Unicode标量：\u{n}，n为任意一到八为十六进制数且可用的Unicode位码。</li>
+</ul>
+
+<p>5、不能将一个字符串或者字符添加到一个已经存在的字符变量上，因为字符变量只能包含一个字符</p>
+
+<p>6、Unicode标量</p>
+
+<ul>
+  <li>表示方式：</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">test</span> <span class="o">=</span> <span class="s">"</span><span class="err">\</span><span class="s">u{XX}"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>7、字符串的修改和访问(Accessing and Modifying a string)</p>
+
+<ul>
+  <li>字符串索引(String indices)
+    <ul>
+      <li>startIndex：访问String的第一个Character的索引</li>
+      <li>endIndex：访问String的最后一个Character的后一个位置的索引</li>
+      <li>在空串的情况下，startIndex和endIndex是相等的</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">greenting</span> <span class="o">=</span> <span class="s">"Guten Tag!"</span>
+<span class="n">greenting</span><span class="p">[</span><span class="n">greenting</span><span class="o">.</span><span class="n">startIndex</span><span class="p">]</span>
+<span class="n">greenting</span><span class="p">[</span><span class="n">greenting</span><span class="o">.</span><span class="n">endIndex</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>但凡遵循Collection协议的类型中都可以使用startIndex 和 endIndex 属性或者 index(before:) 、index(after:) 和 index(_:offsetBy:)，在(String、Array、Dictionary、Set)</li>
+  <li>但凡遵循RangeReplaceableCollection 协议的类型中都可以使用insert(<em>:at:)、insert(contentsOf:at:)、remove(at:) 和 removeSubrange(</em>:)，在(String、Array、Dictionary、Set)</li>
+</ul>
+
+<p>8、子字符串(Substrings)</p>
+
+<ul>
+  <li>与String的区别是在于性能优化上，SubString可以重用原String的内存空间</li>
+  <li>SubString不适合长期存储</li>
+  <li>String与SubString都遵循StringProtocol协议</li>
+  <li>获取字符串前缀：hasPrefix()</li>
+  <li>获取字符串后缀：hasSuffix()</li>
+</ul>
+
+<p>9、字符串Unicode表示形式</p>
+
+<ul>
+  <li>UTF-8 ：编码字符串为8位的代码单元</li>
+  <li>UTF-16：编码字符串为16位的代码单元</li>
+  <li>UTF-32：编码字符串为32为的代码单元</li>
+  <li>可以通过便历String的unicodeScalars属性来访问它的Unicode标量</li>
+</ul>
+
+:ET

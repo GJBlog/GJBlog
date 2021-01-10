@@ -1,2 +1,3 @@
-# GJBlog.github.io
-MyBlog
+# GJBlog
+
+### This is My Blog
